@@ -1,5 +1,6 @@
 :root {
   --font-family: "Roboto", sans-serif;
+
   --primary: #546de5;
   --secondary: #778beb;
   --accent: #e5546d;
@@ -30,6 +31,8 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+// LAYOUT
 
 .container {
   max-width: 1200px;
@@ -74,6 +77,8 @@ a {
   flex: 1 1 50%;
 }
 
+// UTILS
+
 .p-10 {
   padding: 10px;
 }
@@ -110,6 +115,8 @@ pl-10 {
   margin-left: 10px;
 }
 
+// DEBUG
+
 .d1 {
   border: 1px solid red;
 }
@@ -118,25 +125,29 @@ pl-10 {
   border: 1px solid green;
 }
 
-.list-primary li {
-  padding: 10px 15px;
-  border: 1px solid var(--lightgray);
-  border-top: 0;
-  cursor: pointer;
-  transition: all 0.4s;
-}
-.list-primary li:first-child {
-  border-top: 1px solid var(--lightgray);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-.list-primary li:last-child {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.list-primary li:hover {
-  background-color: var(--primary);
-  color: white;
+// THEME
+
+.list-primary {
+  li {
+    padding: 10px 15px;
+    border: 1px solid var(--lightgray);
+    border-top: 0;
+    cursor: pointer;
+    &:first-child {
+      border-top: 1px solid var(--lightgray);
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    &:last-child {
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    &:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+    transition: all 0.4s;
+  }
 }
 
 .btn {
@@ -145,12 +156,12 @@ pl-10 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  &-primary {
+    background-color: var(--primary);
+    color: white;
+    &:hover {
+      background-color: var(--secondary);
+    }
+    transition: all 0.4s;
+  }
 }
-.btn-primary {
-  background-color: var(--primary);
-  color: white;
-  transition: all 0.4s;
-}
-.btn-primary:hover {
-  background-color: var(--secondary);
-}/*# sourceMappingURL=styles.css.map */
