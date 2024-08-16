@@ -1,0 +1,17 @@
+nav {
+  background: var(--primary);
+  color: white;
+}
+nav .logo {
+  font-size: 18px;
+  font-weight: 700;
+}
+nav ul li {
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 3px;
+  transition: background-color 0.4s;
+}
+nav ul li:hover {
+  background-color: var(--secondary);
+}/*# sourceMappingURL=header.component.css.map */
