@@ -70,12 +70,24 @@ a {
   flex: 1 1 auto;
 }
 
+.flex-50 {
+  flex: 1 1 50%;
+}
+
 .p-10 {
   padding: 10px;
 }
 
 .p-20 {
   padding: 20px;
+}
+
+pr-10 {
+  padding-right: 10px;
+}
+
+pl-10 {
+  padding-left: 10px;
 }
 
 .m-10 {
@@ -88,6 +100,14 @@ a {
 
 .mb-20 {
   margin-bottom: 20px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.ml-10 {
+  margin-left: 10px;
 }
 
 .d1 {
