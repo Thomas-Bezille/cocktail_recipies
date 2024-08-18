@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cocktail } from '../interfaces/cocktail.interface';
 
 @Component({
@@ -6,7 +6,11 @@ import { Cocktail } from '../interfaces/cocktail.interface';
   templateUrl: './cocktail-container.component.html',
   styleUrl: './cocktail-container.component.scss',
 })
-export class CocktailContainerComponent {
+export class CocktailContainerComponent implements OnInit {
+  ngOnInit(): void {
+    this.selectedCocktail = this.cocktails[0];
+  }
+
   public cocktails: Cocktail[] = [
     {
       name: 'Mojito',
@@ -69,4 +73,6 @@ export class CocktailContainerComponent {
         'Le nom de ce cocktail date de 1898, année de la perte de Cuba par les Espagnols, et de la fin de la guerre d’indépendance cubaine avec les États-Unis. Selon la légende, ce nom viendrait d’un soldat américain qui commandant une boisson à base de cola, de citron et de rhum, porta un toast « Por Cuba libre ! » (Pour un Cuba libre !). Ce cocktail est composé de rhum, de jus de citron jaune et de cola.',
     },
   ];
+
+  public selectedCocktail: Cocktail;
 }
