@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cocktail } from '../interfaces/cocktail.interface';
 
 @Component({
-  selector: 'app-cocktail-list',
-  templateUrl: './cocktail-list.component.html',
-  styleUrl: './cocktail-list.component.scss',
+  selector: 'app-cocktail-container',
+  templateUrl: './cocktail-container.component.html',
+  styleUrl: './cocktail-container.component.scss',
 })
-export class CocktailListComponent {
-  cocktails: Cocktail[] = [
+export class CocktailContainerComponent implements OnInit {
+  ngOnInit(): void {
+    this.selectedCocktail = this.cocktails[0];
+  }
+
+  public cocktails: Cocktail[] = [
     {
       name: 'Mojito',
       img: 'https://www.destinationcocktails.fr/wp-content/uploads/2019/11/Cocktail-mojito-1-225x300.jpg.webp',
@@ -69,4 +73,10 @@ export class CocktailListComponent {
         'Le nom de ce cocktail date de 1898, année de la perte de Cuba par les Espagnols, et de la fin de la guerre d’indépendance cubaine avec les États-Unis. Selon la légende, ce nom viendrait d’un soldat américain qui commandant une boisson à base de cola, de citron et de rhum, porta un toast « Por Cuba libre ! » (Pour un Cuba libre !). Ce cocktail est composé de rhum, de jus de citron jaune et de cola.',
     },
   ];
+
+  public selectedCocktail: Cocktail;
+
+  public selectCocktail(index: number): void {
+    this.selectedCocktail = this.cocktails[index];
+  }
 }
