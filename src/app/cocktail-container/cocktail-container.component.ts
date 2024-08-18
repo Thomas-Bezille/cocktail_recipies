@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { Cocktail } from '../interfaces/cocktail.interface';
 
 @Component({
-  selector: 'app-cocktail-list',
-  templateUrl: './cocktail-list.component.html',
-  styleUrl: './cocktail-list.component.scss',
+  selector: 'app-cocktail-container',
+  templateUrl: './cocktail-container.component.html',
+  styleUrl: './cocktail-container.component.scss',
 })
-export class CocktailListComponent {
-  cocktails: Cocktail[] = [
+export class CocktailContainerComponent {
+  public cocktails: Cocktail[] = [
     {
       name: 'Mojito',
       img: 'https://www.destinationcocktails.fr/wp-content/uploads/2019/11/Cocktail-mojito-1-225x300.jpg.webp',
