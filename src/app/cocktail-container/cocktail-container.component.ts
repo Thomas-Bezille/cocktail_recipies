@@ -75,4 +75,8 @@ export class CocktailContainerComponent implements OnInit {
   ];
 
   public selectedCocktail: Cocktail;
+
+  public selectCocktail(index: number): void {
+    this.selectedCocktail = this.cocktails[index];
+  }
 }
