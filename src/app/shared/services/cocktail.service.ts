@@ -6,7 +6,7 @@ import { Cocktail } from '../interfaces/cocktail.interface';
   providedIn: 'root',
 })
 export class CocktailService {
-  public cocktails: BehaviorSubject<Cocktail[]> = new BehaviorSubject([
+  public cocktails$: BehaviorSubject<Cocktail[]> = new BehaviorSubject([
     {
       name: 'Mojito',
       img: 'https://www.destinationcocktails.fr/wp-content/uploads/2019/11/Cocktail-mojito-1-225x300.jpg.webp',
@@ -69,9 +69,13 @@ export class CocktailService {
     },
   ]);
 
-  public selectedCocktail: BehaviorSubject<Cocktail> = new BehaviorSubject(
-    this.cocktails.value[0]
+  public selectedCocktail$: BehaviorSubject<Cocktail> = new BehaviorSubject(
+    this.cocktails$.value[0]
   );
+
+  public selectCocktail(index: number): void {
+    this.selectedCocktail$.next(this.cocktails$.value[index]);
+  }
 
   constructor() {}
 }
